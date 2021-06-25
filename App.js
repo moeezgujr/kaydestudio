@@ -10,6 +10,21 @@ import Screens from './navigation/Screens';
 import { Images, articles, nowTheme } from './constants';
 import JobView from './screens/ViewJob';
 
+
+import * as firebase from "firebase"
+
+var firebaseConfig = {
+  apiKey: "AIzaSyCvWxGGGoZ_XvyFRamTycnLLjwO72qgS2A",
+  authDomain: "kaydestudio-2fe5d.firebaseapp.com",
+  projectId: "kaydestudio-2fe5d",
+  storageBucket: "kaydestudio-2fe5d.appspot.com",
+  messagingSenderId: "385911404290",
+  appId: "1:385911404290:web:9ff59192b4c54c13c4f41b",
+  measurementId: "G-9X1Z1H81DR"
+};
+
+firebase.initializeApp(firebaseConfig)
+
 // cache app images
 const assetImages = [
   Images.Onboarding,
@@ -66,7 +81,7 @@ export default class App extends React.Component {
     } else {
       return (
         <NavigationContainer>
-       
+
           <GalioProvider theme={nowTheme}>
             <Block flex>
               <Screens />
